@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -77,5 +78,7 @@ $employee->givePermissionTo([
     'view own leave',
     'cancel own leave',
 ]);
+  $user = \App\Models\User::find(2);  // Replace with real user ID
+$user->assignRole('Manager');
     }
 }
